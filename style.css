@@ -1,0 +1,105 @@
+ * {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+
+ .container {
+
+   max-width: 1000px;
+   margin: 0 auto;
+   padding: 0 15px;
+ }
+
+ .team-container {
+   display: flex;
+   flex-wrap: wrap;
+
+   justify-content: center;
+   gap: 20px;
+
+
+
+ }
+
+ .team-card {
+   display: flex;
+   align-items: center;
+
+
+   background-color: black;
+   width: calc((100% - 40px) / 3);
+   min-width: 250px;
+   max-width: 100%;
+
+
+
+ }
+
+ .card-image {
+   height: 120px;
+   width: 120px;
+   flex-shrink: 0;
+ }
+
+ .card-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+ }
+
+
+ .section-title {
+   padding: 50px 0;
+   text-align: center;
+   color: blue;
+
+ }
+
+ .section-description {
+   text-align: center;
+   margin-bottom: 40px;
+ }
+
+
+ .card-test {
+   display: flex;
+   flex-direction: column;
+   text-align: left;
+   margin-left: 1px;
+   color: white;
+
+ }
+
+ .form-container {
+   max-width: 480px;
+
+   margin: 40px auto;
+ }
+
+ label {
+   margin-bottom: 0.25em;
+ }
+
+ input,
+ select,
+ button {
+   display: block;
+
+   width: 100%;
+   height: 2.65em;
+   margin-bottom: 1em;
+   padding: 0.25em 1em;
+
+   border: 1px solid #cecece;
+   border-radius: 4px;
+   box-shadow: none;
+ }
+
+ button {
+   width: 50%;
+   margin-top: 2em;
+
+   font-size: 1rem;
+ }
