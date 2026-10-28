@@ -1,4 +1,4 @@
-const teamMembers = [
+let teamMembers = [
   {
     name: "Marco Bianchi",
     role: "Designer",
@@ -101,12 +101,36 @@ function onFormSubmit(event) {
 
   teamMembers.push(newMember);
 
+  saveMembersToStorage(teamMembers);
+
+
   renderTeam(teamMembers);
 
   event.target.reset();
 }
 
+function saveMembersToStorage(memberslist) {
+  const datoSerializzato = JSON.stringify(memberslist);
+  localStorage.setItem("members", datoSerializzato);
+}
+
+function loadMembersFromStorage() {
+  const datoSerializzato = localStorage.getItem("members");
+  const nuovoArrey = JSON.parse(datoSerializzato);
+  return nuovoArrey;
+}
+
+const membriSalvati = loadMembersFromStorage();
+
+if (membriSalvati == null) {
+  saveMembersToStorage(teamMembers);
+
+} else {
+  teamMembers = membriSalvati;
+}
+
 renderTeam(teamMembers);
 
 const form = document.getElementById('member-form');
+
 form.addEventListener("submit", onFormSubmit);
